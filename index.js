@@ -1,5 +1,7 @@
 require('dotenv').config();
-const { Client, GatewayIntentBits } = require('discord.js');
+const { Client, GatewayIntentBits, shouldUseGlobalFetchAndWebSocket} = require('discord.js');
+const gpt = require('./gpt.js');
+const {quiet} = require("nodemon/lib/utils");
 
 // Configuration des intents nécessaires pour recevoir et envoyer des messages
 const client = new Client({
@@ -14,10 +16,16 @@ client.on('ready', () => {
     console.log('Client disponible.');
 });
 
-client.on('messageCreate', message => {
+client.on('messageCreate', async message => {
     if (message.mentions.has(client.user)) {
         const sender = message.author.id;
-        message.reply(`<@${sender}> j'ai bien reçu ton message, ça fonctionne!`);
+        try {
+            const completion = await gpt.ask_gpt();
+            message.reply(`<@${sender}> ${completion}`);
+        } catch (e) {
+            message.reply(`<@${sender}> Une erreur s'est produite, je n'ai pas réussi à te répondre!`);
+            console.error(e);
+        }
     }
 });
 

@@ -1,7 +1,5 @@
-import { config } from "dotenv";
-import OpenAI from "openai";
+const OpenAI = require('openai')
 
-config(); // Charge les variables d'environnement
 
 const openai = new OpenAI({
     apiKey: process.env.GPT_KEY // Utilise GPT_KEY depuis ton .env
@@ -9,11 +7,12 @@ const openai = new OpenAI({
 
 async function main() {
     const completion = await openai.chat.completions.create({
+        max_tokens: 50,
         messages: [{ role: "system", content: "You are a helpful assistant." }],
         model: "gpt-3.5-turbo",
     });
 
-    console.log(completion.choices[0]);
+    return completion.choices[0];
 }
 
-await main();
+exports.ask_gpt=main;

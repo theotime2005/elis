@@ -1,0 +1,18 @@
+{
+  "name": "elisa",
+  "version": "1.0.0",
+  "description": "The elisa bot",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "Theotime-Berthod",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.0",
+    "openai": "^4.32.0"
+  }
+}

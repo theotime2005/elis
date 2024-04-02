@@ -19,8 +19,9 @@ client.on('ready', () => {
 client.on('messageCreate', async message => {
     if (message.mentions.has(client.user)) {
         const sender = message.author.id;
+        const content = message.content;
         try {
-            const completion = await gpt.ask_gpt();
+            const completion = await gpt.ask_gpt(content);
             message.reply(`<@${sender}> ${completion}`);
         } catch (e) {
             message.reply(`<@${sender}> Une erreur s'est produite, je n'ai pas réussi à te répondre!`);

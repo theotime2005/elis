@@ -5,10 +5,11 @@ const openai = new OpenAI({
     apiKey: process.env.GPT_KEY // Utilise GPT_KEY depuis ton .env
 });
 
-async function main() {
+async function main(question) {
     const completion = await openai.chat.completions.create({
         max_tokens: 50,
-        messages: [{ role: "system", content: "You are a helpful assistant." }],
+        messages: [{ role: "system", content: "You are a helpful assistant." },
+            {role: "user", content: question}],
         model: "gpt-3.5-turbo",
     });
 

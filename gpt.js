@@ -1,8 +1,7 @@
 const OpenAI = require('openai')
 
-
 const openai = new OpenAI({
-    apiKey: process.env.GPT_KEY // Utilise GPT_KEY depuis ton .env
+    apiKey: process.env.GPT_KEY
 });
 
 async function main(question) {

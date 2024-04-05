@@ -1,4 +1,8 @@
 require('dotenv').config();
+if (!process.env.GPT_KEY || !process.env.BOT_TOKEN) {
+    console.log("Il manque une variable d'environnement.");
+    process.exit();
+}
 const { Client, GatewayIntentBits, shouldUseGlobalFetchAndWebSocket} = require('discord.js');
 const gpt = require('./gpt.js');
 const {quiet} = require("nodemon/lib/utils");

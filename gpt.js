@@ -12,7 +12,8 @@ async function main(question) {
         model: "gpt-3.5-turbo",
     });
 
-    return completion.choices[0];
+    const response = completion.choices[0];
+    return response.message.content;
 }
 
 exports.ask_gpt=main;

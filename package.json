@@ -10,6 +10,7 @@
   "author": "Theotime-Berthod",
   "license": "ISC",
   "dependencies": {
+    "@google/generative-ai": "^0.6.0",
     "discord.js": "^14.14.1",
     "dotenv": "^16.4.5",
     "nodemon": "^3.1.0",

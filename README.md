@@ -3,7 +3,7 @@ Ce projet a pour but de concevoir un bot Ddiscord qui permettra une mise en cont
 
 # Installation
 ## Cloner le repo
-Cpiez collez ces ligne dans votre terminal:
+Copiez collez ces ligne dans votre terminal:
 ```bash
 git clone git@github.com:theotime2005/eliza.git
 cd eliza
@@ -13,8 +13,11 @@ cd eliza
 Créer un fichier ".env" et collez le contenu suivant:
 ```.dotenv
 BOT_TOKEN=votre_token_discord
+AI_TYPE=openAI
+GEMINI_KEY=
 GPT_KEY=votre_clef_gpt
 ```
+Remarque: Gemini est pris en charge mais n'a  pas pu être testé en raison de l'impossibilité d'accéder à la page de l'API.
 
 ### Créer le bot sur discord
 Dans l'application discord, rendez-vous dans les paramètres section "Avancé" et cocher la case "Activer le mode développeur". Cela fait, rendez-vous sur le [portail des développeurs Discord](https://discord.com/developers/applications).

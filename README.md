@@ -22,7 +22,7 @@ Remarque: Gemini est pris en charge mais n'a  pas pu être testé en raison de l
 ### Créer le bot sur discord
 Dans l'application discord, rendez-vous dans les paramètres section "Avancé" et cocher la case "Activer le mode développeur". Cela fait, rendez-vous sur le [portail des développeurs Discord](https://discord.com/developers/applications).
 
-Là, créez une application et donnez-lui le nom que vous souhaitez. Rendez-vous ensuite dans la section "bot" et définissez votre token ainsi que les autorisation de lectur des messages et l'envoi de messages, que vous copirez dans le fichier ".env". Rendez-vous ensuite dans la section "Installation new" et activez les autorisations avant de cliquer sur "Save".
+Là, créez une application et donnez-lui le nom que vous souhaitez. Rendez-vous ensuite dans la section "bot" et définissez votre token ainsi que les autorisation de lectur des messages et l'envoi de messages, que vous copirez dans le fichier [.env](.env). Rendez-vous ensuite dans la section "Installation new" et activez les autorisations avant de cliquer sur "Save".
 
 ### Configurerr la plateforme d'OpenAI
 Rendez-vous sur la [Plateforme chatGPT](https://platform.openai.com/) et créez un compte. Cela fait, allez dans la section "API keies". Créez un nouveau token auquel vous allez donner un nom, puis copiez le dans le fichier ".env".

@@ -25,6 +25,7 @@ client.on('messageCreate', async message => {
     if (message.mentions.has(client.user)) {
         const sender = message.author.id;
         const content = message.content;
+        message.channel.sendTyping();
         try {
             if (process.env.AI_TYPE==="openAI") {
                 const completion = await gpt.ask_gpt(content);
